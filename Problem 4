@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int palin(long int);
+void main()
+{
+
+    long int a,b,c;
+    for(a=999;a>900;a--)
+     {
+         for(b=900;b<1000;b++)
+         {
+             c=a*b;
+            if(palin(c))
+            {
+                printf("largest Palindrom of three digit no. is %ld",c);
+                exit(0);
+            }
+         }
+    }
+     }
+
+int palin(long int i)
+{
+    long int d=0,g;
+    int k=0,j;
+    static int a[10];
+    float b;
+    //scanf("%ld",&i);
+    g=i;
+    while(i!=0)
+    {
+        a[k]=i%10;
+        i=i/10;
+        k++;
+    }
+    b=(float)k-1;
+    for(j=0;j<k;j++)
+    {
+        d+=a[j]*pow(10,b-j);
+    }
+
+    if(d==g)
+       {
+       return 1;
+       }
+    else
+        {
+            return 0;
+        }
+
+
+}

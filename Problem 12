@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long int i=1,k,s=0,m,c=1;
+    while(c<=500)
+    {
+        s+=i;
+        m=sqrt(s);
+        c=2;  	// for the number itself and 1
+        for(k=m;k>1;k--)
+        {
+            if(s%k==0)
+            {
+                if(k==m)// After seeing the pattern we observe that there exist the symmtrical factors wrt to the square root no. So if square root itselfs a factor than count 1
+                    c++;
+                else
+                    c+=2;//Due to symmetry;
+            }
+        }
+        i++;
+
+    }
+    printf("The first trianglular no. with 500 factors is : %ld",s);
+}

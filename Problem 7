@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+int prime(double);
+int main()
+{
+    long int i=2,k=1,a;
+    while(k!=10002) //for 10001st prime no.
+    {
+      if(prime(i))
+      {
+          printf("%ld \n",i);
+          k++;  	// this will take k to 10002
+          a=i;
+      }
+      i++;
+    }
+    printf("%ldst prime no. is : %ld ",k-1,a);
+    return 0;
+}
+int prime(double k) // for checking whether no. is prime or not .
+{
+    long long int i,b;
+    b=k;
+    for(i=sqrt(k);i>1;i--)
+    {
+        if(b%i==0)
+            return 0;
+    }
+    return 1;
+}

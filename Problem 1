@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int i,sum=0,num;
+    printf("Enter a number : ");
+    scanf("%d",&num);
+    for(i=1;i<num;i++)
+    {
+        if(i%3==0 || i%5==0)
+            sum+=i;
+    }
+    printf("\n Sum of the multiple of 3 or 5 is : %d",sum);
+    getch();
+
+}

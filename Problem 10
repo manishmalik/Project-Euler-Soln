@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int prime(double);
+int main()
+{
+    unsigned long long int sum=28,num;
+    for(num=2;num<2000000;num++)
+    {
+        if(num%2==0||num%3==0||num%5==0||num%7==0||num%11==0) // as these are the most common factor excluding them will defenitly reduce the time
+            continue;
+        else
+            if(prime((double)num))
+            {
+                sum+=num;
+            }
+    }
+    printf("Sum is %llu",sum);
+}
+int prime(double k)
+{
+    long long int i,b;
+    b=k;
+    for(i=sqrt(k);i>1;i--)
+    {
+        if(b%i==0)
+            return 0;
+    }
+    return 1;
+}

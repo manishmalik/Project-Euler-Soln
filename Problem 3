@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<math.h>
+int prime(double);
+void main()
+{
+    long long int j,a;
+    double i;
+    printf("Enter a No. :");
+    scanf("%lf",&i);
+    a=i;
+    for(j=sqrt(i);j>1;j--)
+    {
+       if(prime(j))
+        {
+            if(a%j==0)
+            {
+             printf("\n Largest prime factor is : %lld",j);
+             exit(0);
+            }
+
+        }
+        }
+
+
+
+}
+int prime(double k) //Check for prime no.
+{
+    long long int i,b;
+    b=k;
+    for(i=sqrt(k);i>1;i--)
+    {
+        if(b%i==0)
+            return 0;
+    }
+    return 1;
+}

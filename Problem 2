@@ -1,0 +1,16 @@
+#include<stdio.h>
+void main()
+{
+    long unsigned int a=1,b=2,c=0,sum=2,i=1;
+    while(c<=4000000)
+    {
+        i++;
+        c=a+b;
+        a=b;
+        b=c;
+        if(c%2==0)
+            sum+=c;
+    }
+    printf("%lu \n",c);
+    printf("\n Sum of Even valued terms are : %lu",sum);
+}
